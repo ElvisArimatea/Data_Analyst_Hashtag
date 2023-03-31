@@ -6,14 +6,14 @@
     > pandas    -> Analise de dados
     > time      -> utilizada para criar delays neste exemplo
 
- E como objetivo final será enviado um email contendo uma analise de dados simples, através das seguintes
+ E como objetivo final será enviado um email contendo uma análise de dados simples, através das seguintes
  etapas:
  - Abrir uma nova página no navegador;
- - Acessar a página que contem o relatório para análise (página simplificada);
+ - Acessar a página que contém o relatório para análise (página simplificada);
  - Extração do relatório;
  - Analise de dados através do arquivo baixado;
  - Abertura do email;
- - Criação e envio do email contendo os dados da analise.
+ - Criação e envio do email contendo os dados da análise.
 '''
 
 import pyautogui
@@ -33,7 +33,7 @@ pyautogui.PAUSE = 0.5 # Determina o delay após cada comando do pyautogui
 # https://pages.hashtagtreinamentos.com/aula1-intensivao-sistema
 
 
-pyautogui.click(x=121, y=756) # clica no icone do Edge na MINHA barra de iniciar
+pyautogui.click(x=121, y=756) # clica no ícone do Edge na MINHA barra de iniciar
 pyautogui.hotkey("ctrl", "t") # Atalho para abrir uma nova guia
 pyautogui.write("https://pages.hashtagtreinamentos.com/aula1-intensivao-sistema") # Escreve a URL
                                                                         # no campo de URL do navegador
@@ -42,10 +42,10 @@ time.sleep(2) #aguarda 2 segundos
 
 
 pyautogui.click(x=589, y=379) # clica no campo do login
-pyautogui.write("Login")    # digita o login ficticio
+pyautogui.write("Login")    # digita o login fictício
 
 pyautogui.press("tab")      # passa p/ o campo da senha
-pyautogui.write("senha")    # digita a senha ficticia
+pyautogui.write("senha")    # digita a senha fictícia
 
 pyautogui.press("tab")      # seleciona o botão 'entrar'
 pyautogui.press("enter")    # aperta o botão 'entrar'
@@ -61,8 +61,8 @@ time.sleep(2) #aguarda 2 segundos
 tabela = pd.read_csv(r"C:\Users\SEU_USUARIO_AQUI\Downloads\Compras.csv", sep=';') #importa o arquivo que
                                             # fizemos o download anteriormente no site
 
-total_gasto = tabela['ValorFinal'].sum()    # realiza a soma da columa 'ValorFinal'
-quantidade = tabela['Quantidade'].sum()     # realiza a soma da columa 'Quantidade'
+total_gasto = tabela['ValorFinal'].sum()    # realiza a soma da coluna 'ValorFinal'
+quantidade = tabela['Quantidade'].sum()     # realiza a soma da coluna 'Quantidade'
 preco_medio = total_gasto / quantidade      # Divide o total gasto pela quantidade, assim
                                             # obtemos o preço médio
 
@@ -78,7 +78,7 @@ pyautogui.write("Insira seu email aqui")    #Insere o email do destinatário
 pyautogui.press("tab")                      # confirma o email
 pyautogui.press("tab")                      # passa para o assunto
 
-assunto_email = "Relatório de Vendas"       #Cria uma váriavel com o nome do assunto
+assunto_email = "Relatório de Vendas"       #Cria uma variavel com o nome do assunto
 pyperclip.copy(assunto_email)               #Usa a biblioteca para que não se percam os caract. especiais
 pyautogui.hotkey("ctrl", "v")               #O famoso 'Ctrl + V'
 pyautogui.press("tab")                      #passa para o corpo do email
